@@ -1,10 +1,11 @@
-import { Button } from '@chakra-ui/react';
+import { Header } from '../components/layouts/header/Header';
+import { Menu } from '../components/layouts/main/menu';
 
 export default function Home() {
   return (
     <>
-      <h1>hello</h1>
-      <Button colorScheme="red">記録する</Button>
+      <Header />
+      <Menu />
     </>
   );
 }
