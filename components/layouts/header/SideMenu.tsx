@@ -9,7 +9,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 
-export const Menu = () => {
+export const SlideMenu = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
