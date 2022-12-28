@@ -16,8 +16,20 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react';
+import { useState } from 'react';
 
 export const Menu = () => {
+  const [menu, setMenu] = useState('');
+  const [weight, setWeight] = useState('');
+  const [count, setCount] = useState('');
+
+  const handleClick = () => {
+    console.log({ menu, weight, count });
+    setMenu('');
+    setWeight('');
+    setCount('');
+  };
+
   return (
     <>
       <Container maxW="1200px">
@@ -45,16 +57,22 @@ export const Menu = () => {
                 <Tbody>
                   <Tr>
                     <Td>
-                      <Input />
+                      <Input value={menu} onChange={(e) => setMenu(e.target.value)} />
                     </Td>
                     <Td>
                       <NumberInput>
-                        <NumberInputField />
+                        <NumberInputField
+                          value={weight}
+                          onChange={(e) => setWeight(e.target.value)}
+                        />
                       </NumberInput>
                     </Td>
                     <Td>
                       <NumberInput>
-                        <NumberInputField />
+                        <NumberInputField
+                          value={count}
+                          onChange={(e) => setCount(e.target.value)}
+                        />
                       </NumberInput>
                     </Td>
                   </Tr>
@@ -64,7 +82,7 @@ export const Menu = () => {
           </Box>
           <Box>
             {/* isDisabled={!form.isValid()} */}
-            <Button isDisabled ml="80%" colorScheme="red">
+            <Button onClick={handleClick} ml="80%" colorScheme="red">
               記録する
             </Button>
           </Box>
