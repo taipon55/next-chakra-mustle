@@ -19,12 +19,14 @@ import {
 import { useState } from 'react';
 
 export const Menu = () => {
+  const [training, setTraining] = useState('');
   const [menu, setMenu] = useState('');
   const [weight, setWeight] = useState('');
   const [count, setCount] = useState('');
 
   const handleClick = () => {
-    console.log({ menu, weight, count });
+    console.log({ training, menu, weight, count });
+    setTraining('');
     setMenu('');
     setWeight('');
     setCount('');
@@ -36,7 +38,14 @@ export const Menu = () => {
         <Stack spacing={10}>
           <Box mt={10}>
             <Text>トレーニング内容</Text>
-            <Select textAlign="center" w="40" size="lg" placeholder="メニュ一覧">
+            <Select
+              value={training}
+              onChange={(e) => setTraining(e.target.value)}
+              textAlign="center"
+              w="40"
+              size="lg"
+              placeholder="メニュ一覧"
+            >
               <option value="option1">胸トレ</option>
               <option value="option2">肩トレ</option>
               <option value="option3">腕トレ</option>
