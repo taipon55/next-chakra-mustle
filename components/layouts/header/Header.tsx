@@ -8,7 +8,6 @@ export const Header = () => {
           <Flex h={20} justify="center" align="center">
             <SlideMenu />
             <Text color="white" p="40%">
-              {' '}
               筋トレメモ
             </Text>
           </Flex>
